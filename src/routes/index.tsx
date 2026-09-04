@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { HomePage, SiteFooter } from "@/components/butta-rush-site";
+import { HomePage } from "@/components/butta-rush-site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,5 +16,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  return <><HomePage /><SiteFooter /></>;
+  return <HomePage />;
 }
