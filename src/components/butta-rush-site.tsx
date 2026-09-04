@@ -464,7 +464,7 @@ export function HomePage() {
       <section className="relative isolate min-h-[calc(100vh-5rem)] border-b border-border/60">
         <div className="absolute inset-0 -z-10">
           <img
-            src="/__l5e/assets-v1/b1277068-eda6-4e85-942b-ec26790cb8ae/butta-rush-hero.jpg"
+            src="https://res.cloudinary.com/dxpquojo2/image/upload/v1788519542/butta-rush-hero_jlrvy3.jpg"
             alt="A Butta Rush catering spread with jollof rice, chicken, small chops and cake"
             width={1600}
             height={1000}
@@ -502,7 +502,7 @@ export function HomePage() {
                 <Check className="h-4 w-4 text-primary" /> Made to order
               </span>
               <span className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-primary" /> Lagos delivery
+                <Check className="h-4 w-4 text-primary" /> Port Harcourt delivery
               </span>
               <span className="flex items-center gap-2">
                 <Check className="h-4 w-4 text-primary" /> Event-ready portions
@@ -754,7 +754,7 @@ export function SiteFooter() {
             >
               <Instagram className="h-4 w-4" /> @buttarush
             </a>
-            <span className="text-muted-foreground">Lagos, Nigeria · © 2026</span>
+            <span className="text-muted-foreground">Port Harcourt, Nigeria · © 2026</span>
           </div>
         </div>
       </div>

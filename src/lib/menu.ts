@@ -35,7 +35,17 @@ const jollofImage = "/__l5e/assets-v1/d263085a-7ace-478e-ac40-93e8e22c3def/butta
 const cakeImage = "/__l5e/assets-v1/2fd6eab6-3a84-48c0-9f2e-c0dad9227212/butta-rush-cake.jpg";
 const chopsImage =
   "/__l5e/assets-v1/d9f16891-8513-47ea-a5e9-eb9a554873ab/butta-rush-small-chops.jpg";
-
+  const fourlayercakeImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518068/White_wedding_cake_nrp7xg.jpg";
+  const threelayercakeImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518410/Simple_cake_dkchod.jpg";
+  const fivelayercakeImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518814/Beyaz_D%C3%BC%C4%9F%C3%BCn_Pastas%C4%B1_ofvwxo.jpg";
+  const foundantcakeimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518814/Strawberry_flavour_cake_decorated_with_love_shaped_cream_and_bow_dr57t8.jpg";
+  const twolayerfoundantcakeimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518813/download_6_gy0pyk.jpg";
+  const fivelayerfoundantcakeimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788519194/40_Inspiring_Wedding_Cake_Creations___Simplicity_Five-Tier_Wedding_Cake_pfjrvo.jpg";
+  const pastryimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/Puff_Pastry_Pockets__A_Flaky_and_Delicious_Treat_ve8itq.jpg"
+  const meatpie = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/Nigerian_meat_pie_bxkild.jpg";
+  const fishrollImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/253K_views_16K_reactions___Fish_rolls___._These_are_fried_fish_rolls_and_it_s_a_good_day_to_make_some_for_your_family._They_are_crunchy_on_the_outside_soft_and_delicious_on_qp18wg.jpg";
+  const chinchin = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Crunchy_chinchin_blbzpq.jpg"
+  const bigchinchin = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Nigerian_CHIN_CHIN_aehqzk.jpg"
 export const menuItems: MenuItem[] = [
   {
     id: "four-layer-cake",
@@ -45,7 +55,7 @@ export const menuItems: MenuItem[] = [
     portion: "8 inch · serves 20–25",
     description:
       "A tall, celebration-ready buttercream cake finished in your chosen colours and flavour profile.",
-    image: cakeImage,
+    image: fourlayercakeImage,
   },
   {
     id: "three-layer-cake",
@@ -55,7 +65,7 @@ export const menuItems: MenuItem[] = [
     portion: "8 inch · serves 15–20",
     description:
       "Soft layers, generous buttercream and a polished finish for birthdays, milestones and intimate celebrations.",
-    image: cakeImage,
+    image: threelayercakeImage,
   },
   {
     id: "five-layer-cake",
@@ -65,7 +75,7 @@ export const menuItems: MenuItem[] = [
     portion: "6 inch · serves 10–15",
     description:
       "A compact but striking layered cake, made to order with a warm, handcrafted finish.",
-    image: cakeImage,
+    image: fivelayercakeImage,
   },
   {
     id: "fondant-ten-inch",
@@ -74,8 +84,8 @@ export const menuItems: MenuItem[] = [
     price: 36000,
     portion: "10 inch · serves 20–25",
     description:
-      "A clean fondant finish with room for a personalised message or simple celebration design.",
-    image: cakeImage,
+      "A clean strawberry fondant finish with room for a personalised message or simple celebration design.",
+    image: foundantcakeimage,
   },
   {
     id: "fondant-six-inch",
@@ -84,7 +94,7 @@ export const menuItems: MenuItem[] = [
     price: 30000,
     portion: "6 inch · serves 10–15",
     description: "Two generous layers wrapped in smooth fondant and finished for your occasion.",
-    image: cakeImage,
+    image: twolayerfoundantcakeimage,
   },
   {
     id: "fondant-eight-inch",
@@ -93,8 +103,8 @@ export const menuItems: MenuItem[] = [
     price: 70000,
     portion: "8 inch · serves 15–20",
     description:
-      "A showpiece cake with a fondant finish. Final price depends on the complexity of your design.",
-    image: cakeImage,
+      "This exquisite cake stands tall with five tiers, each embodying a delicate balance of simplicity and beauty.",
+    image: fivelayerfoundantcakeimage,
     varies: true,
   },
   {
@@ -104,7 +114,7 @@ export const menuItems: MenuItem[] = [
     price: 700,
     portion: "Per piece · minimum order applies",
     description: "A pocket-friendly pastry for snack boxes, office treats and party platters.",
-    image: chopsImage,
+    image: pastryimage,
     minimumOrder: true,
   },
   {
@@ -114,7 +124,7 @@ export const menuItems: MenuItem[] = [
     price: 1000,
     portion: "Per piece · minimum order applies",
     description: "Flaky, golden pastry filled with a savoury, comforting meat filling.",
-    image: chopsImage,
+    image: meatpie,
     minimumOrder: true,
   },
   {
@@ -124,7 +134,7 @@ export const menuItems: MenuItem[] = [
     price: 700,
     portion: "Per piece · minimum order applies",
     description: "Crisp pastry wrapped around a seasoned fish filling, made fresh for every order.",
-    image: chopsImage,
+    image: fishrollImage,
     minimumOrder: true,
   },
   {
@@ -134,7 +144,7 @@ export const menuItems: MenuItem[] = [
     price: 2500,
     portion: "Pack",
     description: "Crunchy, lightly sweet chin chin for gifting, grazing and party tables.",
-    image: chopsImage,
+    image: chinchin,
   },
   {
     id: "chin-chin-large",
@@ -143,7 +153,7 @@ export const menuItems: MenuItem[] = [
     price: 7500,
     portion: "850g pack",
     description: "A generous pack of crunchy chin chin for sharing or stocking the pantry.",
-    image: chopsImage,
+    image: bigchinchin,
   },
   {
     id: "plain-donuts",

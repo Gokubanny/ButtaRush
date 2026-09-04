@@ -1,4 +1,4 @@
-# Pixel Perfect Preview
+# Butta Rush
 
 Implement exactly the screenshot and nothing else
 
