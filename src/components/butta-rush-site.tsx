@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -38,6 +38,8 @@ import {
   getWhatsAppUrl,
   menuCategories,
   menuItems,
+  readStoredOrder,
+  storeOrder,
   type MenuCategory,
   type MenuItem,
   type OrderLine,
@@ -127,6 +129,9 @@ export function SiteHeader() {
             </Link>
             <Link to="/menu" onClick={() => setOpen(false)}>
               Menu
+            </Link>
+            <Link to="/pickup" onClick={() => setOpen(false)}>
+              Pickup
             </Link>
             <a href="#about" onClick={() => setOpen(false)}>
               Our story
@@ -379,12 +384,17 @@ export function OrderSummary({
               <span className="font-display text-2xl font-bold">{formatNaira(subtotal)}</span>
             </div>
             <Button
-              asChild
               className="mt-5 h-12 w-full rounded-full"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                storeOrder(lines);
+                setOpen(false);
+              }}
             >
+              <Link to="/pickup"><ShoppingBag /> Set pickup details</Link>
+            </Button>
+            <Button asChild variant="outline" className="mt-2 h-12 w-full rounded-full">
               <a href={getWhatsAppUrl(lines)} target="_blank" rel="noreferrer">
-                <MessageCircle /> Order on WhatsApp
+                <MessageCircle /> Order without pickup
               </a>
             </Button>
             <Button variant="ghost" className="mt-2 w-full text-muted-foreground" onClick={onClear}>
@@ -400,7 +410,10 @@ export function OrderSummary({
 export function Catalog({ preview = false }: { preview?: boolean }) {
   const [category, setCategory] = useState<"All" | MenuCategory>("All");
   const [selected, setSelected] = useState<MenuItem | null>(null);
-  const [lines, setLines] = useState<OrderLine[]>([]);
+  const [lines, setLines] = useState<OrderLine[]>(readStoredOrder);
+  useEffect(() => {
+    storeOrder(lines);
+  }, [lines]);
   const filteredItems = useMemo(
     () =>
       preview
@@ -727,6 +740,9 @@ export function SiteFooter() {
             </Link>
             <Link to="/menu" className="hover:text-primary">
               Menu
+            </Link>
+            <Link to="/pickup" className="hover:text-primary">
+              Pickup
             </Link>
             <a href="/#about" className="hover:text-primary">
               Our story
