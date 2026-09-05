@@ -538,7 +538,7 @@ export function HomePage() {
         <div className="relative">
           <div className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-muted">
             <img
-              src="/__l5e/assets-v1/d9f16891-8513-47ea-a5e9-eb9a554873ab/butta-rush-small-chops.jpg"
+              src="https://res.cloudinary.com/dxpquojo2/image/upload/v1788616370/Amazing_Small_Chops_Vendors_k0mzdw.jpg"
               alt="A generous platter of small chops"
               width={1200}
               height={1200}
@@ -600,25 +600,25 @@ export function HomePage() {
           </div>
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
             <img
-              src="/__l5e/assets-v1/2fd6eab6-3a84-48c0-9f2e-c0dad9227212/butta-rush-cake.jpg"
+              src="https://res.cloudinary.com/dxpquojo2/image/upload/v1788518410/Simple_cake_dkchod.jpg"
               alt="Buttercream cake detail"
               loading="lazy"
               className="aspect-square w-full rounded-2xl object-cover"
             />
             <img
-              src="/__l5e/assets-v1/d263085a-7ace-478e-ac40-93e8e22c3def/butta-rush-jollof.jpg"
+              src="https://res.cloudinary.com/dxpquojo2/image/upload/v1788617323/Perfect_Oven_Baked_Jollof_igax62.jpg"
               alt="Jollof rice with grilled chicken"
               loading="lazy"
               className="mt-8 aspect-square w-full rounded-2xl object-cover sm:mt-12"
             />
             <img
-              src="/__l5e/assets-v1/d9f16891-8513-47ea-a5e9-eb9a554873ab/butta-rush-small-chops.jpg"
-              alt="Small chops platter"
+              src="https://res.cloudinary.com/dxpquojo2/image/upload/v1788616677/Mix_brownie__.._iayofs.jpg"
+              alt="Brownies cake box with chocolate drizzle"
               loading="lazy"
               className="aspect-square w-full rounded-2xl object-cover"
             />
             <img
-              src="/__l5e/assets-v1/b1277068-eda6-4e85-942b-ec26790cb8ae/butta-rush-hero.jpg"
+              src="https://res.cloudinary.com/dxpquojo2/image/upload/v1788616395/bakedwithlove_smallchops_surprise_partyfood_homemade_abuja_foodtrays_partytray_birthdaycake_cakes_baking_instagood_qflrf4.jpg"
               alt="Butta Rush food spread"
               loading="lazy"
               className="mt-8 aspect-square w-full rounded-2xl object-cover sm:mt-12"

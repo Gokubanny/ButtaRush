@@ -31,7 +31,7 @@ export const menuCategories: Array<"All" | MenuCategory> = [
 ];
 
 const heroImage = "/__l5e/assets-v1/b1277068-eda6-4e85-942b-ec26790cb8ae/butta-rush-hero.jpg";
-const jollofImage = "/__l5e/assets-v1/d263085a-7ace-478e-ac40-93e8e22c3def/butta-rush-jollof.jpg";
+const jollofImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616207/7533a72fc29d20007edf927033a76a3c_bztfv8.jpg";
 const cakeImage = "/__l5e/assets-v1/2fd6eab6-3a84-48c0-9f2e-c0dad9227212/butta-rush-cake.jpg";
 const chopsImage =
   "/__l5e/assets-v1/d9f16891-8513-47ea-a5e9-eb9a554873ab/butta-rush-small-chops.jpg";
@@ -44,8 +44,20 @@ const chopsImage =
   const pastryimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/Puff_Pastry_Pockets__A_Flaky_and_Delicious_Treat_ve8itq.jpg"
   const meatpie = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/Nigerian_meat_pie_bxkild.jpg";
   const fishrollImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/253K_views_16K_reactions___Fish_rolls___._These_are_fried_fish_rolls_and_it_s_a_good_day_to_make_some_for_your_family._They_are_crunchy_on_the_outside_soft_and_delicious_on_qp18wg.jpg";
-  const chinchin = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Crunchy_chinchin_blbzpq.jpg"
-  const bigchinchin = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Nigerian_CHIN_CHIN_aehqzk.jpg"
+  const chinchin = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Crunchy_chinchin_blbzpq.jpg";
+  const bigchinchin = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Nigerian_CHIN_CHIN_aehqzk.jpg";
+  const plaindonuts = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615882/donut_lwykmi.jpg";
+  const jamdonuts = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615880/Jam_doughnuts_glqphj.jpg";
+  const glazeddonuts = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/download_12_r0uu4n.jpg";
+  const glazedbox = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/download_13_qsvr6b.jpg";
+  const spagettiImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616200/food_porn_ul8akb.jpg";
+  const ricebeaf = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/Jollof_ltbvod.jpg";
+  const smallchopstray = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616370/Amazing_Small_Chops_Vendors_k0mzdw.jpg";
+  const treatbox = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616707/download_14_nqeafp.jpg"
+  const foodtray = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616395/bakedwithlove_smallchops_surprise_partyfood_homemade_abuja_foodtrays_partytray_birthdaycake_cakes_baking_instagood_qflrf4.jpg"
+  const foundantcake = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788617042/My_client_convinced_me_to_make_a_fondant_cake_and_I_like_how_it_turned_out_____dccdqx.jpg";
+  const carrotcake = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788617043/Carrot_cake_vjog0s.jpg";
+
 export const menuItems: MenuItem[] = [
   {
     id: "four-layer-cake",
@@ -162,7 +174,7 @@ export const menuItems: MenuItem[] = [
     price: 700,
     portion: "Per piece",
     description: "Soft, golden ring donuts made for breakfast boxes and sweet tables.",
-    image: cakeImage,
+    image: plaindonuts,
   },
   {
     id: "jam-donuts",
@@ -171,7 +183,7 @@ export const menuItems: MenuItem[] = [
     price: 1000,
     portion: "Per piece",
     description: "Soft donuts filled with a bright jam centre and finished fresh.",
-    image: cakeImage,
+    image: jamdonuts,
   },
   {
     id: "glazed-donuts-two",
@@ -180,7 +192,7 @@ export const menuItems: MenuItem[] = [
     price: 3000,
     portion: "Box of 2",
     description: "Two soft donuts finished with a glossy glaze for a small sweet moment.",
-    image: cakeImage,
+    image: glazeddonuts,
   },
   {
     id: "glazed-donuts-four",
@@ -189,7 +201,7 @@ export const menuItems: MenuItem[] = [
     price: null,
     portion: "Box of 4",
     description: "A box of four glazed donuts. Ask us for the current price and available finish.",
-    image: cakeImage,
+    image: glazedbox,
     inquiryOnly: true,
   },
   {
@@ -204,43 +216,43 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "spaghetti-surprise",
-    name: "Spaghetti Surprise",
+    name: "Spaghetti Jollof with Butta Rush Surprise",
     category: "Food / Meals",
     price: 6000,
-    portion: "Tray / serving size to confirm",
+    portion: "litre / serving size to confirm",
     description:
       "A saucy, generous spaghetti dish with a little Butta Rush surprise in every forkful.",
-    image: jollofImage,
+    image: spagettiImage,
   },
   {
-    id: "rice-goatmeat",
-    name: "Rice & Goatmeat Pepper Sauce",
+    id: "jollof rice-spiced beaf",
+    name: "Jollof Rice, Spiced Beef & plaintain",
     category: "Food / Meals",
-    price: 7000,
+    price: 8000,
     portion: "Serving size to confirm",
     description: "A hearty rice meal paired with tender goatmeat and a lively pepper sauce.",
-    image: jollofImage,
+    image: ricebeaf,
   },
   {
     id: "small-chops",
     name: "Small Chops Platter",
     category: "Food / Meals",
-    price: 300,
+    price: 27000,
     portion: "Per piece · minimum order applies",
     description:
       "A party favourite: a mix of bite-sized savouries for events, meetings and easy entertaining.",
-    image: chopsImage,
+    image: smallchopstray,
     minimumOrder: true,
   },
   {
     id: "treat-boxes",
     name: "Food / Treat Boxes",
     category: "Treats & Trays",
-    price: 20000,
+    price: 40000,
     portion: "Box · contents vary",
     description:
       "A thoughtful box built around your occasion, appetite and budget. Contents and final price vary.",
-    image: heroImage,
+    image: treatbox,
     varies: true,
   },
   {
@@ -251,7 +263,7 @@ export const menuItems: MenuItem[] = [
     portion: "Tray · serving size to confirm",
     description:
       "A generous tray for family tables, celebrations and events that need feeding done beautifully.",
-    image: heroImage,
+    image: foodtray,
   },
   {
     id: "fondant-craft",
@@ -261,7 +273,7 @@ export const menuItems: MenuItem[] = [
     portion: "Custom piece",
     description:
       "Custom toppers, figures and sugar craft details made to bring a cake concept to life.",
-    image: cakeImage,
+    image: foundantcake,
     varies: true,
   },
   {
@@ -272,7 +284,7 @@ export const menuItems: MenuItem[] = [
     portion: "Size to confirm",
     description:
       "A warmly spiced carrot cake. Ask us for current pricing, size options and finish.",
-    image: cakeImage,
+    image: carrotcake,
     inquiryOnly: true,
   },
 ];
