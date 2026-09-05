@@ -19,7 +19,15 @@ export type OrderLine = {
   quantity: number;
 };
 
+export type PickupDetails = {
+  date: string;
+  time: string;
+  address: string;
+};
+
 export const WHATSAPP_NUMBER = "2349077383838";
+export const ORDER_STORAGE_KEY = "butta-rush-order";
+export const PICKUP_STORAGE_KEY = "butta-rush-pickup";
 
 export const menuCategories: Array<"All" | MenuCategory> = [
   "All",
@@ -298,7 +306,7 @@ export function formatNaira(value: number | null) {
   return `₦${value.toLocaleString("en-NG")}`;
 }
 
-export function getWhatsAppUrl(lines: OrderLine[]) {
+export function getWhatsAppUrl(lines: OrderLine[], pickup?: PickupDetails) {
   if (lines.length === 0) return `https://wa.me/${WHATSAPP_NUMBER}`;
   const total = lines.reduce((sum, line) => sum + (line.item.price ?? 0) * line.quantity, 0);
   const message = [
@@ -308,7 +316,68 @@ export function getWhatsAppUrl(lines: OrderLine[]) {
         `${line.quantity}x ${line.item.name} — ${formatNaira((line.item.price ?? 0) * line.quantity)}`,
     ),
     `Total: ${formatNaira(total)}`,
-    "Please confirm availability and delivery details.",
+    ...(pickup
+      ? [
+          "",
+          "Pickup details:",
+          `Date: ${pickup.date}`,
+          `Time: ${pickup.time}`,
+          `Address: ${pickup.address}`,
+        ]
+      : ["Please confirm availability and delivery details."]),
   ].join("\n");
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+export function readStoredOrder(): OrderLine[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const stored = window.sessionStorage.getItem(ORDER_STORAGE_KEY);
+    if (!stored) return [];
+    const parsed: unknown = JSON.parse(stored);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.flatMap((line) => {
+      if (!line || typeof line !== "object") return [];
+      const id = "item" in line && line.item && typeof line.item === "object" && "id" in line.item
+        ? line.item.id
+        : undefined;
+      const quantity = "quantity" in line ? line.quantity : undefined;
+      const item = menuItems.find((menuItem) => menuItem.id === id);
+      return item && typeof quantity === "number" && quantity > 0
+        ? [{ item, quantity: Math.floor(quantity) }]
+        : [];
+    });
+  } catch {
+    return [];
+  }
+}
+
+export function storeOrder(lines: OrderLine[]) {
+  if (typeof window !== "undefined") {
+    window.sessionStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify(lines));
+  }
+}
+
+export function readStoredPickup(): PickupDetails | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const stored = window.sessionStorage.getItem(PICKUP_STORAGE_KEY);
+    if (!stored) return null;
+    const parsed: unknown = JSON.parse(stored);
+    if (!parsed || typeof parsed !== "object") return null;
+    const details = parsed as Partial<PickupDetails>;
+    return typeof details.date === "string" &&
+      typeof details.time === "string" &&
+      typeof details.address === "string"
+      ? { date: details.date, time: details.time, address: details.address }
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+export function storePickup(details: PickupDetails) {
+  if (typeof window !== "undefined") {
+    window.sessionStorage.setItem(PICKUP_STORAGE_KEY, JSON.stringify(details));
+  }
 }
