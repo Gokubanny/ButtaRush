@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -38,6 +38,8 @@ import {
   getWhatsAppUrl,
   menuCategories,
   menuItems,
+  readStoredOrder,
+  storeOrder,
   type MenuCategory,
   type MenuItem,
   type OrderLine,
@@ -127,6 +129,9 @@ export function SiteHeader() {
             </Link>
             <Link to="/menu" onClick={() => setOpen(false)}>
               Menu
+            </Link>
+            <Link to="/pickup" onClick={() => setOpen(false)}>
+              Pickup
             </Link>
             <a href="#about" onClick={() => setOpen(false)}>
               Our story
@@ -378,13 +383,20 @@ export function OrderSummary({
               <span className="text-sm text-muted-foreground">Subtotal</span>
               <span className="font-display text-2xl font-bold">{formatNaira(subtotal)}</span>
             </div>
-            <Button
-              asChild
-              className="mt-5 h-12 w-full rounded-full"
-              onClick={() => setOpen(false)}
-            >
+            <Button asChild className="mt-5 h-12 w-full rounded-full">
+              <Link
+                to="/pickup"
+                onClick={() => {
+                  storeOrder(lines);
+                  setOpen(false);
+                }}
+              >
+                <ShoppingBag /> Set pickup details
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="mt-2 h-12 w-full rounded-full">
               <a href={getWhatsAppUrl(lines)} target="_blank" rel="noreferrer">
-                <MessageCircle /> Order on WhatsApp
+                <MessageCircle /> Order without pickup
               </a>
             </Button>
             <Button variant="ghost" className="mt-2 w-full text-muted-foreground" onClick={onClear}>
@@ -401,6 +413,12 @@ export function Catalog({ preview = false }: { preview?: boolean }) {
   const [category, setCategory] = useState<"All" | MenuCategory>("All");
   const [selected, setSelected] = useState<MenuItem | null>(null);
   const [lines, setLines] = useState<OrderLine[]>([]);
+  useEffect(() => {
+    setLines(readStoredOrder());
+  }, []);
+  useEffect(() => {
+    storeOrder(lines);
+  }, [lines]);
   const filteredItems = useMemo(
     () =>
       preview
@@ -705,6 +723,161 @@ export function MenuPage() {
   );
 }
 
+const pickupTimes = Array.from({ length: 15 }, (_, index) => {
+  const hour = index + 7;
+  const suffix = hour >= 12 ? "PM" : "AM";
+  const displayHour = hour > 12 ? hour - 12 : hour;
+  return `${displayHour}:00 ${suffix}`;
+});
+
+export function PickupPage() {
+  const [lines, setLines] = useState<OrderLine[]>([]);
+  const [pickup, setPickup] = useState({ date: "", time: "", address: "" });
+  const [today, setToday] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    setLines(readStoredOrder());
+    const storedPickup = readStoredPickup();
+    if (storedPickup) setPickup(storedPickup);
+    setToday(new Date().toISOString().split("T")[0] ?? "");
+  }, []);
+
+  const itemCount = lines.reduce((sum, line) => sum + line.quantity, 0);
+  const subtotal = lines.reduce((sum, line) => sum + (line.item.price ?? 0) * line.quantity, 0);
+  const isComplete = pickup.date !== "" && pickup.time !== "" && pickup.address.trim() !== "";
+  const whatsappUrl = isComplete ? getWhatsAppUrl(lines, pickup) : "#";
+
+  if (lines.length === 0) {
+    return (
+      <main className="min-h-[calc(100vh-5rem)] bg-card px-5 py-20 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-xl text-center">
+          <ShoppingBag className="mx-auto h-10 w-10 text-primary" />
+          <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-primary">Pickup booking</p>
+          <h1 className="mt-4 font-display text-5xl font-black tracking-tight">Start with your order.</h1>
+          <p className="mx-auto mt-5 max-w-md leading-7 text-muted-foreground">
+            Choose your cakes, pastries or meals first, then come back here to reserve a pickup time.
+          </p>
+          <Button asChild className="mt-8 h-12 rounded-full px-6">
+            <Link to="/menu">Browse the menu <ArrowRight /></Link>
+          </Button>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="min-h-screen bg-card">
+      <section className="border-b border-border/60 bg-background">
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Pickup booking</p>
+          <h1 className="mt-4 max-w-3xl font-display text-5xl font-black tracking-tight sm:text-7xl">
+            Choose when we’ll have it ready.
+          </h1>
+          <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
+            Pick a date between 7:00 AM and 9:00 PM, add your address, then send the full order to us on WhatsApp.
+          </p>
+        </div>
+      </section>
+
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-16">
+        <form
+          className="space-y-8"
+          onSubmit={(event) => {
+            event.preventDefault();
+            if (isComplete) setSubmitted(true);
+          }}
+        >
+          <div>
+            <label htmlFor="pickup-date" className="text-sm font-semibold">Pickup date</label>
+            <input
+              id="pickup-date"
+              type="date"
+              min={today}
+              value={pickup.date}
+              onChange={(event) => setPickup((current) => ({ ...current, date: event.target.value }))}
+              className="mt-3 flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-base shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm"
+              required
+            />
+          </div>
+
+          <fieldset>
+            <legend className="text-sm font-semibold">Pickup time</legend>
+            <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-5">
+              {pickupTimes.map((time) => (
+                <label key={time} className="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="pickup-time"
+                    value={time}
+                    checked={pickup.time === time}
+                    onChange={(event) => setPickup((current) => ({ ...current, time: event.target.value }))}
+                    className="peer sr-only"
+                  />
+                  <span className="flex min-h-11 items-center justify-center rounded-md border border-border bg-background px-2 text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:ring-2 peer-focus-visible:ring-ring">
+                    {time}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <div>
+            <label htmlFor="pickup-address" className="text-sm font-semibold">Pickup address</label>
+            <textarea
+              id="pickup-address"
+              value={pickup.address}
+              onChange={(event) => setPickup((current) => ({ ...current, address: event.target.value }))}
+              placeholder="Enter the address for this pickup"
+              className="mt-3 flex min-h-28 w-full rounded-md border border-input bg-background px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring md:text-sm"
+              required
+            />
+          </div>
+
+          {submitted && !isComplete && (
+            <p className="text-sm font-medium text-deep-red" role="alert">
+              Please choose a date, choose a time and enter an address to continue.
+            </p>
+          )}
+          <Button type="submit" className="h-12 w-full rounded-full sm:w-auto sm:px-8">
+            Review pickup details <ArrowRight />
+          </Button>
+        </form>
+
+        <aside className="h-fit rounded-2xl border border-border bg-background p-6 lg:sticky lg:top-28">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Your order</p>
+          <div className="mt-6 space-y-4">
+            {lines.map((line) => (
+              <div key={line.item.id} className="flex items-start justify-between gap-4 border-b border-border pb-4">
+                <div>
+                  <p className="font-semibold leading-tight">{line.item.name}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{line.quantity} × {formatNaira(line.item.price)}</p>
+                </div>
+                <span className="shrink-0 font-bold text-primary">{formatNaira((line.item.price ?? 0) * line.quantity)}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">{itemCount} item{itemCount === 1 ? "" : "s"}</span>
+            <span className="font-display text-2xl font-bold">{formatNaira(subtotal)}</span>
+          </div>
+          {submitted && isComplete && (
+            <div className="mt-6 border-t border-border pt-6">
+              <div className="flex items-start gap-3 text-sm">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <p className="leading-6">Your pickup details are ready. Send them to Butta Rush to confirm availability.</p>
+              </div>
+              <Button asChild className="mt-5 h-12 w-full rounded-full">
+                <a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle /> Send order on WhatsApp</a>
+              </Button>
+            </div>
+          )}
+        </aside>
+      </div>
+    </main>
+  );
+}
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/60 bg-card">
@@ -727,6 +900,9 @@ export function SiteFooter() {
             </Link>
             <Link to="/menu" className="hover:text-primary">
               Menu
+            </Link>
+            <Link to="/pickup" className="hover:text-primary">
+              Pickup
             </Link>
             <a href="/#about" className="hover:text-primary">
               Our story
