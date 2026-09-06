@@ -104,7 +104,7 @@ var Route$2 = createRootRouteWithContext()({
 				name: "viewport",
 				content: "width=device-width, initial-scale=1"
 			},
-			{ title: "Butta Rush Port Harcourt Nigerian Catering" },
+			{ title: "Butta Rush — Nigerian Catering" },
 			{
 				name: "description",
 				content: "Nigerian dishes, cakes and pastries made to order."
@@ -115,7 +115,7 @@ var Route$2 = createRootRouteWithContext()({
 			},
 			{
 				property: "og:title",
-				content: "Butta Rush Port Harcourt Nigerian Catering"
+				content: "Butta Rush — Nigerian Catering"
 			},
 			{
 				property: "og:description",
@@ -184,14 +184,14 @@ function RootComponent() {
 var $$splitComponentImporter$1 = () => import("./routes-CYJW1s_d.mjs");
 var Route$1 = createFileRoute("/")({
 	head: () => ({ meta: [
-		{ title: "Butta Rush Port Harcourt Nigerian Catering, Cakes & Pastries" },
+		{ title: "Butta Rush — Nigerian Catering, Cakes & Pastries" },
 		{
 			name: "description",
 			content: "Home-style Nigerian dishes, celebration cakes, pastries and catering trays made to order by Butta Rush."
 		},
 		{
 			property: "og:title",
-			content: "Butta Rush Port Harcourt Nigerian Catering, Cakes & Pastries"
+			content: "Butta Rush — Nigerian Catering, Cakes & Pastries"
 		},
 		{
 			property: "og:description",
@@ -211,14 +211,14 @@ var Route$1 = createFileRoute("/")({
 var $$splitComponentImporter = () => import("./menu-BH_tVOTs.mjs");
 var Route = createFileRoute("/menu")({
 	head: () => ({ meta: [
-		{ title: "Menu Port Harcourt Butta Rush Nigerian Catering" },
+		{ title: "Menu — Butta Rush Nigerian Catering" },
 		{
 			name: "description",
 			content: "Browse Butta Rush cakes, pastries, Nigerian meals, treat boxes and catering trays, then order directly on WhatsApp."
 		},
 		{
 			property: "og:title",
-			content: "Menu Port Harcourt Butta Rush Nigerian Catering"
+			content: "Menu — Butta Rush Nigerian Catering"
 		},
 		{
 			property: "og:description",

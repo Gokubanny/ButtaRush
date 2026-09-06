@@ -78,10 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Butta Rush Port Harcourt Nigerian Catering" },
+      { title: "Butta Rush — Nigerian Catering" },
       { name: "description", content: "Nigerian dishes, cakes and pastries made to order." },
       { name: "author", content: "Butta Rush" },
-      { property: "og:title", content: "Butta Rush Port Harcourt Nigerian Catering" },
+      { property: "og:title", content: "Butta Rush — Nigerian Catering" },
       { property: "og:description", content: "Nigerian dishes, cakes and pastries made to order." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -5,3 +5,4 @@
 - [x] Build responsive home and menu routes
 - [x] Add catalog filters, detail dialog, order sheet, and WhatsApp handoff
 - [x] Validate build, lint, routes, and live order flow
+- [x] Run npm build, verify dist/client output, and confirm deployment link

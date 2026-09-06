@@ -151,7 +151,7 @@ function isPromise(value) {
 * Includes ASCII control characters (0x00-0x1F, 0x7F) and a subset of the
 * WHATWG URL "path percent-encode set" (", <, >, `, {, }).
 *
-* Space (0x20) is intentionally excluded Port Harcourt decodeURI decodes %20 to space
+* Space (0x20) is intentionally excluded — decodeURI decodes %20 to space
 * and the router stores decoded spaces in location.pathname. The existing
 * encodePathLikeUrl already handles re-encoding spaces for outgoing URLs.
 *
@@ -13764,7 +13764,7 @@ function makeMainStream(serverSsr, appStream, opts) {
 	/**
 	* Enqueue a string chunk through the backpressure queue. Stored as a
 	* string and encoded only when the downstream actually accepts the chunk
-	* Port Harcourt keeps native-memory pressure inside the controller's queue (which
+	* — keeps native-memory pressure inside the controller's queue (which
 	* honors desiredSize) rather than ours.
 	*/
 	function writeChunk(chunk) {

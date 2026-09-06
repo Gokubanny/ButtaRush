@@ -39,32 +39,54 @@ export const menuCategories: Array<"All" | MenuCategory> = [
 ];
 
 const heroImage = "/__l5e/assets-v1/b1277068-eda6-4e85-942b-ec26790cb8ae/butta-rush-hero.jpg";
-const jollofImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616207/7533a72fc29d20007edf927033a76a3c_bztfv8.jpg";
+const jollofImage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616207/7533a72fc29d20007edf927033a76a3c_bztfv8.jpg";
 const cakeImage = "/__l5e/assets-v1/2fd6eab6-3a84-48c0-9f2e-c0dad9227212/butta-rush-cake.jpg";
 const chopsImage =
   "/__l5e/assets-v1/d9f16891-8513-47ea-a5e9-eb9a554873ab/butta-rush-small-chops.jpg";
-  const fourlayercakeImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518068/White_wedding_cake_nrp7xg.jpg";
-  const threelayercakeImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518410/Simple_cake_dkchod.jpg";
-  const fivelayercakeImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518814/Beyaz_D%C3%BC%C4%9F%C3%BCn_Pastas%C4%B1_ofvwxo.jpg";
-  const foundantcakeimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518814/Strawberry_flavour_cake_decorated_with_love_shaped_cream_and_bow_dr57t8.jpg";
-  const twolayerfoundantcakeimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518813/download_6_gy0pyk.jpg";
-  const fivelayerfoundantcakeimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788519194/40_Inspiring_Wedding_Cake_Creations___Simplicity_Five-Tier_Wedding_Cake_pfjrvo.jpg";
-  const pastryimage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/Puff_Pastry_Pockets__A_Flaky_and_Delicious_Treat_ve8itq.jpg"
-  const meatpie = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/Nigerian_meat_pie_bxkild.jpg";
-  const fishrollImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/253K_views_16K_reactions___Fish_rolls___._These_are_fried_fish_rolls_and_it_s_a_good_day_to_make_some_for_your_family._They_are_crunchy_on_the_outside_soft_and_delicious_on_qp18wg.jpg";
-  const chinchin = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Crunchy_chinchin_blbzpq.jpg";
-  const bigchinchin = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Nigerian_CHIN_CHIN_aehqzk.jpg";
-  const plaindonuts = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615882/donut_lwykmi.jpg";
-  const jamdonuts = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615880/Jam_doughnuts_glqphj.jpg";
-  const glazeddonuts = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/download_12_r0uu4n.jpg";
-  const glazedbox = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/download_13_qsvr6b.jpg";
-  const spagettiImage = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616200/food_porn_ul8akb.jpg";
-  const ricebeaf = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/Jollof_ltbvod.jpg";
-  const smallchopstray = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616370/Amazing_Small_Chops_Vendors_k0mzdw.jpg";
-  const treatbox = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616707/download_14_nqeafp.jpg"
-  const foodtray = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616395/bakedwithlove_smallchops_surprise_partyfood_homemade_abuja_foodtrays_partytray_birthdaycake_cakes_baking_instagood_qflrf4.jpg"
-  const foundantcake = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788617042/My_client_convinced_me_to_make_a_fondant_cake_and_I_like_how_it_turned_out_____dccdqx.jpg";
-  const carrotcake = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788617043/Carrot_cake_vjog0s.jpg";
+const fourlayercakeImage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518068/White_wedding_cake_nrp7xg.jpg";
+const threelayercakeImage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518410/Simple_cake_dkchod.jpg";
+const fivelayercakeImage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518814/Beyaz_D%C3%BC%C4%9F%C3%BCn_Pastas%C4%B1_ofvwxo.jpg";
+const foundantcakeimage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518814/Strawberry_flavour_cake_decorated_with_love_shaped_cream_and_bow_dr57t8.jpg";
+const twolayerfoundantcakeimage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788518813/download_6_gy0pyk.jpg";
+const fivelayerfoundantcakeimage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788519194/40_Inspiring_Wedding_Cake_Creations___Simplicity_Five-Tier_Wedding_Cake_pfjrvo.jpg";
+const pastryimage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/Puff_Pastry_Pockets__A_Flaky_and_Delicious_Treat_ve8itq.jpg";
+const meatpie =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/Nigerian_meat_pie_bxkild.jpg";
+const fishrollImage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520335/253K_views_16K_reactions___Fish_rolls___._These_are_fried_fish_rolls_and_it_s_a_good_day_to_make_some_for_your_family._They_are_crunchy_on_the_outside_soft_and_delicious_on_qp18wg.jpg";
+const chinchin =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Crunchy_chinchin_blbzpq.jpg";
+const bigchinchin =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788520723/Nigerian_CHIN_CHIN_aehqzk.jpg";
+const plaindonuts =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615882/donut_lwykmi.jpg";
+const jamdonuts =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615880/Jam_doughnuts_glqphj.jpg";
+const glazeddonuts =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/download_12_r0uu4n.jpg";
+const glazedbox =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/download_13_qsvr6b.jpg";
+const spagettiImage =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616200/food_porn_ul8akb.jpg";
+const ricebeaf = "https://res.cloudinary.com/dxpquojo2/image/upload/v1788615881/Jollof_ltbvod.jpg";
+const smallchopstray =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616370/Amazing_Small_Chops_Vendors_k0mzdw.jpg";
+const treatbox =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616707/download_14_nqeafp.jpg";
+const foodtray =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616395/bakedwithlove_smallchops_surprise_partyfood_homemade_abuja_foodtrays_partytray_birthdaycake_cakes_baking_instagood_qflrf4.jpg";
+const foundantcake =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788617042/My_client_convinced_me_to_make_a_fondant_cake_and_I_like_how_it_turned_out_____dccdqx.jpg";
+const carrotcake =
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788617043/Carrot_cake_vjog0s.jpg";
 
 export const menuItems: MenuItem[] = [
   {
@@ -313,7 +335,7 @@ export function getWhatsAppUrl(lines: OrderLine[], pickup?: PickupDetails) {
     "Hi Butta Rush! I'd like to place an order:",
     ...lines.map(
       (line) =>
-        `${line.quantity}x ${line.item.name} Port Harcourt ${formatNaira((line.item.price ?? 0) * line.quantity)}`,
+        `${line.quantity}x ${line.item.name} — ${formatNaira((line.item.price ?? 0) * line.quantity)}`,
     ),
     `Total: ${formatNaira(total)}`,
     ...(pickup
@@ -338,9 +360,10 @@ export function readStoredOrder(): OrderLine[] {
     if (!Array.isArray(parsed)) return [];
     return parsed.flatMap((line) => {
       if (!line || typeof line !== "object") return [];
-      const id = "item" in line && line.item && typeof line.item === "object" && "id" in line.item
-        ? line.item.id
-        : undefined;
+      const id =
+        "item" in line && line.item && typeof line.item === "object" && "id" in line.item
+          ? line.item.id
+          : undefined;
       const quantity = "quantity" in line ? line.quantity : undefined;
       const item = menuItems.find((menuItem) => menuItem.id === id);
       return item && typeof quantity === "number" && quantity > 0

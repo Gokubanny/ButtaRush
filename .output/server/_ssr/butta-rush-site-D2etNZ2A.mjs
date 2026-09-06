@@ -386,7 +386,7 @@ function getWhatsAppUrl(lines) {
 	const total = lines.reduce((sum, line) => sum + (line.item.price ?? 0) * line.quantity, 0);
 	const message = [
 		"Hi Butta Rush! I'd like to place an order:",
-		...lines.map((line) => `${line.quantity}x ${line.item.name} Port Harcourt ${formatNaira((line.item.price ?? 0) * line.quantity)}`),
+		...lines.map((line) => `${line.quantity}x ${line.item.name} — ${formatNaira((line.item.price ?? 0) * line.quantity)}`),
 		`Total: ${formatNaira(total)}`,
 		"Please confirm availability and delivery details."
 	].join("\n");
@@ -641,7 +641,7 @@ function DetailDialog({ item, open, onOpenChange, onAdd }) {
 								})]
 							}), item.minimumOrder && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-4 text-xs font-medium text-deep-red",
-								children: "Minimum order applies Port Harcourt confirm quantity with us on WhatsApp."
+								children: "Minimum order applies — confirm quantity with us on WhatsApp."
 							})]
 						}),
 						item.inquiryOnly ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WhatsAppButton, {
@@ -972,7 +972,7 @@ function HomePage() {
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-4 max-w-xl text-base leading-8 text-muted-foreground",
-						children: "Our menu is made for sharing Port Harcourt generous, joyful and easy to order. Tell us what you’re planning and we’ll help you build the spread."
+						children: "Our menu is made for sharing — generous, joyful and easy to order. Tell us what you’re planning and we’ll help you build the spread."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 						asChild: true,
@@ -999,7 +999,7 @@ function HomePage() {
 							children: "A table worth gathering around."
 						})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "max-w-sm text-sm leading-6 text-muted-foreground",
-							children: "Temporary preview imagery for now Port Harcourt your real cakes, trays and celebrations can take this space next."
+							children: "Temporary preview imagery for now — your real cakes, trays and celebrations can take this space next."
 						})]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4",
@@ -1156,7 +1156,7 @@ function SiteFooter() {
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-3 max-w-xs text-sm leading-6 text-muted-foreground",
-					children: "Nigerian dishes, cakes and pastries Port Harcourt made to order."
+					children: "Nigerian dishes, cakes and pastries — made to order."
 				})] }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground",

@@ -7,7 +7,8 @@ export const Route = createFileRoute("/pickup")({
       { title: "Pickup Booking — Butta Rush" },
       {
         name: "description",
-        content: "Choose a pickup date and time, add your address, and send your Butta Rush order on WhatsApp.",
+        content:
+          "Choose a pickup date and time, add your address, and send your Butta Rush order on WhatsApp.",
       },
       { property: "og:title", content: "Pickup Booking — Butta Rush" },
       {
