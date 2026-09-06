@@ -38,7 +38,9 @@ import {
   getWhatsAppUrl,
   menuCategories,
   menuItems,
+  readStoredPickup,
   readStoredOrder,
+  storePickup,
   storeOrder,
   type MenuCategory,
   type MenuItem,
@@ -286,7 +288,7 @@ function DetailDialog({
               </div>
               {item.minimumOrder && (
                 <p className="mt-4 text-xs font-medium text-deep-red">
-                  Minimum order applies — confirm quantity with us on WhatsApp.
+                  Minimum order applies Port Harcourt confirm quantity with us on WhatsApp.
                 </p>
               )}
             </div>
@@ -413,12 +415,14 @@ export function Catalog({ preview = false }: { preview?: boolean }) {
   const [category, setCategory] = useState<"All" | MenuCategory>("All");
   const [selected, setSelected] = useState<MenuItem | null>(null);
   const [lines, setLines] = useState<OrderLine[]>([]);
+  const [hasLoadedOrder, setHasLoadedOrder] = useState(false);
   useEffect(() => {
     setLines(readStoredOrder());
+    setHasLoadedOrder(true);
   }, []);
   useEffect(() => {
-    storeOrder(lines);
-  }, [lines]);
+    if (hasLoadedOrder) storeOrder(lines);
+  }, [hasLoadedOrder, lines]);
   const filteredItems = useMemo(
     () =>
       preview
@@ -586,7 +590,7 @@ export function HomePage() {
             from the first stir to the final flourish.
           </p>
           <p className="mt-4 max-w-xl text-base leading-8 text-muted-foreground">
-            Our menu is made for sharing — generous, joyful and easy to order. Tell us what you’re
+            Our menu is made for sharing Port Harcourt generous, joyful and easy to order. Tell us what you’re
             planning and we’ll help you build the spread.
           </p>
           <Button
@@ -612,7 +616,7 @@ export function HomePage() {
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-6 text-muted-foreground">
-              Temporary preview imagery for now — your real cakes, trays and celebrations can take
+              Temporary preview imagery for now Port Harcourt your real cakes, trays and celebrations can take
               this space next.
             </p>
           </div>
@@ -785,7 +789,10 @@ export function PickupPage() {
           className="space-y-8"
           onSubmit={(event) => {
             event.preventDefault();
-            if (isComplete) setSubmitted(true);
+            if (isComplete) {
+              storePickup(pickup);
+              setSubmitted(true);
+            }
           }}
         >
           <div>
@@ -887,7 +894,7 @@ export function SiteFooter() {
             Butta Rush<span className="text-primary">.</span>
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
-            Nigerian dishes, cakes and pastries — made to order.
+            Nigerian dishes, cakes and pastries Port Harcourt made to order.
           </p>
         </div>
         <div>
