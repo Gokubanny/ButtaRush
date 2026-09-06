@@ -15,6 +15,7 @@ import {
   Truck,
   X,
 } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -560,7 +561,7 @@ export function HomePage() {
         <div className="relative">
           <div className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-muted">
             <img
-              src="https://res.cloudinary.com/dxpquojo2/image/upload/v1788616370/Amazing_Small_Chops_Vendors_k0mzdw.jpg"
+              src="https://res.cloudinary.com/dxpquojo2/image/upload/v1788674327/WhatsApp_Image_2026-09-06_at_6.58.08_AM_g4skgp.jpg"
               alt="A generous platter of small chops"
               width={1200}
               height={1200}
@@ -970,6 +971,15 @@ export function SiteFooter() {
               className="flex items-center gap-2 hover:text-primary"
             >
               <Instagram className="h-4 w-4" /> @buttarush
+            </a>
+
+            <a
+              href="https://tiktok.com/@buttarush"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 hover:text-primary"
+            >
+              <FaTiktok className="h-4 w-4" /> @buttarush
             </a>
             <span className="text-muted-foreground">Port Harcourt, Nigeria · © 2026</span>
           </div>

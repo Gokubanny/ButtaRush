@@ -82,7 +82,7 @@ const smallchopstray =
 const treatbox =
   "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616707/download_14_nqeafp.jpg";
 const foodtray =
-  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788616395/bakedwithlove_smallchops_surprise_partyfood_homemade_abuja_foodtrays_partytray_birthdaycake_cakes_baking_instagood_qflrf4.jpg";
+  "https://res.cloudinary.com/dxpquojo2/image/upload/v1788674035/Screenshot_2026-09-06_065136_ksuppj.png";
 const foundantcake =
   "https://res.cloudinary.com/dxpquojo2/image/upload/v1788617042/My_client_convinced_me_to_make_a_fondant_cake_and_I_like_how_it_turned_out_____dccdqx.jpg";
 const carrotcake =
@@ -258,7 +258,7 @@ export const menuItems: MenuItem[] = [
     id: "jollof rice-spiced beaf",
     name: "Jollof Rice, Spiced Beef & plaintain",
     category: "Food / Meals",
-    price: 8000,
+    price: 6000,
     portion: "Serving size to confirm",
     description: "A hearty rice meal paired with tender goatmeat and a lively pepper sauce.",
     image: ricebeaf,
@@ -278,7 +278,7 @@ export const menuItems: MenuItem[] = [
     id: "treat-boxes",
     name: "Food / Treat Boxes",
     category: "Treats & Trays",
-    price: 40000,
+    price: 20000,
     portion: "Box · contents vary",
     description:
       "A thoughtful box built around your occasion, appetite and budget. Contents and final price vary.",
@@ -289,7 +289,7 @@ export const menuItems: MenuItem[] = [
     id: "food-tray",
     name: "Food Tray",
     category: "Treats & Trays",
-    price: 60000,
+    price: 250000,
     portion: "Tray · serving size to confirm",
     description:
       "A generous tray for family tables, celebrations and events that need feeding done beautifully.",
