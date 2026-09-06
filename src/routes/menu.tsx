@@ -4,13 +4,13 @@ import { MenuPage } from "@/components/butta-rush-site";
 export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
-      { title: "Menu — Butta Rush Nigerian Catering" },
+      { title: "Menu Port Harcourt Butta Rush Nigerian Catering" },
       {
         name: "description",
         content:
           "Browse Butta Rush cakes, pastries, Nigerian meals, treat boxes and catering trays, then order directly on WhatsApp.",
       },
-      { property: "og:title", content: "Menu — Butta Rush Nigerian Catering" },
+      { property: "og:title", content: "Menu Port Harcourt Butta Rush Nigerian Catering" },
       {
         property: "og:description",
         content:

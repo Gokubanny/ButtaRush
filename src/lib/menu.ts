@@ -305,7 +305,7 @@ export function getWhatsAppUrl(lines: OrderLine[]) {
     "Hi Butta Rush! I'd like to place an order:",
     ...lines.map(
       (line) =>
-        `${line.quantity}x ${line.item.name} — ${formatNaira((line.item.price ?? 0) * line.quantity)}`,
+        `${line.quantity}x ${line.item.name} Port Harcourt ${formatNaira((line.item.price ?? 0) * line.quantity)}`,
     ),
     `Total: ${formatNaira(total)}`,
     "Please confirm availability and delivery details.",
