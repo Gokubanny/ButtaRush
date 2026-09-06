@@ -797,11 +797,12 @@ export function PickupPage() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-16">
         <form
           className="space-y-8"
+          noValidate
           onSubmit={(event) => {
             event.preventDefault();
+            setSubmitted(true);
             if (isComplete) {
               storePickup(pickup);
-              setSubmitted(true);
             }
           }}
         >
