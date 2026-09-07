@@ -506,7 +506,7 @@ export function HomePage() {
               <br />
               <span className="text-primary">made for</span> your next order.
             </h1>
-            <p className="mt-7 max-w-lg text-base leading-7 text-muted-foreground sm:text-lg">
+            <p className="mt-7 max-w-lg text-base leading-7 text-foreground/90 sm:text-lg">
               Home-style dishes, beautifully finished cakes and party favourites prepared with care
               for the people and moments that matter.
             </p>
