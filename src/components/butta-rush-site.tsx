@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 
+import logoAsset from "@/assets/butta-rush-logo.jpeg.asset.json";
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -591,7 +593,7 @@ export function HomePage() {
             from the first stir to the final flourish.
           </p>
           <p className="mt-4 max-w-xl text-base leading-8 text-muted-foreground">
-            Our menu is made for sharing Port Harcourt generous, joyful and easy to order. Tell us
+            Our menu is made for purpolar meal for people in Port Harcourt and easy to order. Tell us
             what you’re planning and we’ll help you build the spread.
           </p>
           <Button
