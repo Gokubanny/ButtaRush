@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 
+import logoAsset from "@/assets/butta-rush-logo.jpeg.asset.json";
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -81,13 +83,14 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Link to="/" className="group flex items-center gap-3 text-foreground">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/50 bg-primary text-lg font-black text-primary-foreground">
-            B
-          </span>
-          <span className="font-display text-xl font-bold tracking-tight">
-            Butta Rush<span className="text-primary">.</span>
-          </span>
+        <Link to="/" className="group flex items-center">
+          <img
+            src={logoAsset.url}
+            alt="Butta Rush"
+            width={120}
+            height={120}
+            className="h-14 w-auto rounded-full"
+          />
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
           <Link to="/" className="transition-colors hover:text-foreground">
@@ -119,8 +122,14 @@ export function SiteHeader() {
           className="w-[min(88vw,360px)] border-l-border bg-background p-6"
         >
           <SheetHeader className="text-left">
-            <SheetTitle className="font-display text-2xl">
-              Butta Rush<span className="text-primary">.</span>
+            <SheetTitle className="flex items-center">
+              <img
+                src={logoAsset.url}
+                alt="Butta Rush"
+                width={120}
+                height={120}
+                className="h-14 w-auto rounded-full"
+              />
             </SheetTitle>
             <SheetDescription>
               Home-style Nigerian dishes, cakes and pastries made to order.
@@ -925,8 +934,14 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 bg-card">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_1fr] lg:px-8">
         <div>
-          <Link to="/" className="font-display text-2xl font-bold">
-            Butta Rush<span className="text-primary">.</span>
+          <Link to="/" className="inline-flex items-center">
+            <img
+              src={logoAsset.url}
+              alt="Butta Rush"
+              width={120}
+              height={120}
+              className="h-12 w-auto rounded-full"
+            />
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
             Nigerian dishes, cakes and pastries Port Harcourt made to order.
