@@ -122,8 +122,14 @@ export function SiteHeader() {
           className="w-[min(88vw,360px)] border-l-border bg-background p-6"
         >
           <SheetHeader className="text-left">
-            <SheetTitle className="font-display text-2xl">
-              Butta Rush<span className="text-primary">.</span>
+            <SheetTitle className="flex items-center">
+              <img
+                src={logoAsset.url}
+                alt="Butta Rush"
+                width={120}
+                height={120}
+                className="h-10 w-auto"
+              />
             </SheetTitle>
             <SheetDescription>
               Home-style Nigerian dishes, cakes and pastries made to order.
