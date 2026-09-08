@@ -83,13 +83,14 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Link to="/" className="group flex items-center gap-3 text-foreground">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/50 bg-primary text-lg font-black text-primary-foreground">
-            B
-          </span>
-          <span className="font-display text-xl font-bold tracking-tight">
-            Butta Rush<span className="text-primary">.</span>
-          </span>
+        <Link to="/" className="group flex items-center">
+          <img
+            src={logoAsset.url}
+            alt="Butta Rush"
+            width={120}
+            height={120}
+            className="h-10 w-auto"
+          />
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
           <Link to="/" className="transition-colors hover:text-foreground">
