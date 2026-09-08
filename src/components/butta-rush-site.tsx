@@ -934,8 +934,14 @@ export function SiteFooter() {
     <footer className="border-t border-border/60 bg-card">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_1fr] lg:px-8">
         <div>
-          <Link to="/" className="font-display text-2xl font-bold">
-            Butta Rush<span className="text-primary">.</span>
+          <Link to="/" className="inline-flex items-center">
+            <img
+              src={logoAsset.url}
+              alt="Butta Rush"
+              width={120}
+              height={120}
+              className="h-12 w-auto rounded-full"
+            />
           </Link>
           <p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">
             Nigerian dishes, cakes and pastries Port Harcourt made to order.
