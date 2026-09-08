@@ -128,7 +128,7 @@ export function SiteHeader() {
                 alt="Butta Rush"
                 width={120}
                 height={120}
-                className="h-10 w-auto"
+                className="h-14 w-auto rounded-full"
               />
             </SheetTitle>
             <SheetDescription>
